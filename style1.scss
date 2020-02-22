@@ -1,0 +1,40 @@
+$color_h3: #404f54;
+
+@mixin heading3 ($color_h3, $size, $weight, $height){
+    color: $color_h3;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $height;
+}
+
+.container4, .container5{
+    h3{
+        @include heading3($color_h3, 35px, 700, 24px)
+    }
+}
+
+@function title1($indentation, $size_block){
+    @return $size_block - $indentation;
+}
+
+#container1{
+    height: title1(370px, 1080px);
+}
+
+@media (max-width:992px){
+    #container1{
+        height: title1(100px, 700px);
+    }
+}
+
+@media (max-width:768px){
+    #container1{
+        height: title1(100px, 600px);
+    }
+}
+
+@media (max-width:576px){
+    #container1{
+        height: title1(100px, 600px);
+    }
+}
